@@ -1,0 +1,9 @@
+amazon:
+  dynamodb:
+    endpoint: http://localhost:8010/
+  aws:
+    accesskey: any
+    secretkey: any
+
+dias_totales: 3600
+cron_job: "0 0 0 * * *"

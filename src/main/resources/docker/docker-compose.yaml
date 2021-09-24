@@ -1,0 +1,8 @@
+version: '3.1'
+
+services:
+  dynamodb:
+    container_name: dynamodb
+    image: instructure/dynamo-local-admin
+    ports:
+      - 8010:8000
