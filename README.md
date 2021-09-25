@@ -1,4 +1,4 @@
-### <center>**Problema a solucionar**</center>
+###  <p style="text-align: center"> **Problema a solucionar** </p>
 En una galaxia lejana, existen tres civilizaciones. Vulcanos, Ferengis y Betasoides. Cada
 civilización vive en paz en su respectivo planeta.
 Dominan la predicción del clima mediante un complejo sistema informático.
@@ -25,7 +25,7 @@ Realizar un programa informático para poder predecir en los próximos 10 años:
 2. ¿Cuántos períodos de lluvia habrá y qué día será el pico máximo de lluvia?
 3. ¿Cuántos períodos de condiciones óptimas de presión y temperatura habrá?
 
-### <center>**Solución**</center>
+### <p style="text-align: center"> **Solución** </p>
 #### **Consideraciones:**
 
 - Cada año durará 360 días ya que es el tiempo que le toma dar una vuelta al planeta mas lento (Ferengi)
@@ -42,7 +42,7 @@ s = sentido (-1=Horario, 1=Antihorario)
 - Para calcular el area de un triangulo hay dos formas: Matriz y producto. Usaré la formula de producto:
 ```
 Sean A, B y C puntos de un plano cartesiamo en 2 dimensiones, calculamos el area del triangulo:
-Area = $\frac {Xa(Yc-Yb) + Xb(Ya-Yc) + Xc(Yb-Ya)}{2}$ 
+Area = (Xa(Yc-Yb) + Xb(Ya-Yc) + Xc(Yb-Ya))/2 
 ```
 - Se ingresan los planetas manualmente al crear la BD
 - Pensando en escalabilidad (por ejemplo kubernetes), al iniciar la aplicación se valida el numero de pronosticos en la DB y si este numero es menor al número de dias que hay en 10 años (3600 dias), se hacen los calculos de los pronosticos y se guardan en la DB. Sino, no se hace este procedimiento.
@@ -56,15 +56,15 @@ Area = $\frac {Xa(Yc-Yb) + Xb(Ya-Yc) + Xc(Yb-Ya)}{2}$
 - Amazon EC2
 
 #### **Estructura del proyecto:**
-- model -> Modelos utilizados para mapeos con base de datos y hacer calculos
-- repository -> Configuración de conexión BD e interfaces con operaciones hacia la BD
-- controller -> Exposición de API Rest, calculos de cada dia, manejo de errores
-- job -> Scheduled de spring para calcular y guardar pronostico todos los dias a las 12 am
-- util -> Clase y constantes utilitarias en todo el proyecto
-- src/java/resources/database -> Script para crear y poblar tabla planetas por medio de AWS CLI
-- src/java/resources/docker -> docker compose para crear contenedor docker de dynamo localmente
-- src/test/java -> Pruebas unitarias
-- src/test/resources -> Archivo jmx de Apache Jmeter para ejecutar pruebas de aceptación
+- **model** -> Modelos utilizados para mapeos con base de datos y hacer calculos
+- **repository** -> Configuración de conexión BD e interfaces con operaciones hacia la BD
+- **controller** -> Exposición de API Rest, calculos de cada dia, manejo de errores
+- **job** -> Scheduled de spring para calcular y guardar pronostico todos los dias a las 12 am
+- **util** -> Clase y constantes utilitarias en todo el proyecto
+- **src/java/resources/database** -> Script para crear y poblar tabla planetas por medio de AWS CLI
+- **src/java/resources/docker** -> docker compose para crear contenedor docker de dynamo localmente
+- **src/test/java** -> Pruebas unitarias
+- **src/test/resources** -> Archivo jmx de Apache Jmeter para ejecutar pruebas de aceptación
 
 #### **Modelo de base de datos:**
 ![Image not found](https://github.com/braduran/galaxy_weather/blob/main/images/DB_modelo.png?raw=true)
