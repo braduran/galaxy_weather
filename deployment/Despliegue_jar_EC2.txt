@@ -1,0 +1,11 @@
+1- Copiar jar de equipo local a EC2 por medio de ssh con el siguiente comando: 
+
+scp -i millaveamazon.pem application.jar ec2-user@<public.ip>:/home/ec2-user/
+
+2- Crear un shell script, por ejemplo script.sh, con lo siguiente:
+export ACCESS_KEY=Tu access key
+export SECRET_KEY=Tu secret key
+java -jar application.jar
+
+3- Ejecutar script en segundo plano para que al cerrar la sesión ssh siga en ejecución el programa:
+nohup sh script.sh &
