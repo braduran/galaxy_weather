@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
         (basePackages = "co.com.galaxy.repository")
 public class DynamoDbConfig {
 
-    @Value("${amazon.dynamodb.endpoint}")
+    @Value("${amazon.dynamodb.endpoint:}")
     private String amazonDynamoDBEndpoint;
 
     @Value("${amazon.aws.accesskey}")
